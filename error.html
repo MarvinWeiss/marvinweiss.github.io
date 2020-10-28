@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet"> 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script>
+			
+			function getGif(){
+				$.get( "http://api.giphy.com/v1/gifs/random?api_key=dMXxGPxHGrJY4cJfiL2grL7uz43nHgNV", function( data ) {
+					$("#gifBox img").remove();
+			  		$("#gifBox").prepend($('<img>',{id:'theImg',src: data.data.image_original_url}));
+				});
+			}
+		</script>
+		
+		<style>
+			body{
+				font-family: 'Roboto', sans-serif;
+			}
+			#content{
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%); 
+				width: 48%;
+				height: 59%;
+			}
+
+
+		</style>
+	</head>
+	
+		<body onload="getGif()">
+			<div id="content">
+				<table>
+					<tr>
+						<h4>The Web site you may seek</h4>
+						<h4>Cannot be located, but</h4>
+						<h4>take instead a GIF</h4>
+						<h4>Error 404</h4>
+					</tr>
+					<tr>
+						<td><div id="gifBox" id="content"></div></td>
+					</tr>
+				</table>
+			</div>
+		</body>
+</html>
