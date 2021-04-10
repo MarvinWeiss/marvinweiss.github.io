@@ -5,17 +5,17 @@
 		<script>
 			function getGif(){
 				$.get( "http://api.giphy.com/v1/gifs/random?api_key=dMXxGPxHGrJY4cJfiL2grL7uz43nHgNV", function( data ) {
-					$("#gifBox img").remove();
-			  		$("#gifBox").prepend($('<img>',{id:'theImg',src: data.data.image_original_url}));
+					$("#gif").remove();
+			  		$("#content").prepend($('<img>',{id:'gif',src: data.data.image_original_url}));
 				});
 			}
 			function getImg(){
 				$("img").remove();
-			  	$("#content").prepend($('<img>',{id:'content1',src: "https://source.unsplash.com/random/300x300?sig="+Math.random()}));
-			  	$("#content2").prepend($('<img>',{id:'content2',src: "https://source.unsplash.com/random/300x300?sig="+Math.random()}));
-			  	$("#content3").prepend($('<img>',{id:'content3',src: "https://source.unsplash.com/random/300x300?sig="+Math.random()}));
-			  	$("#content4").prepend($('<img>',{id:'content4',src: "https://source.unsplash.com/random/300x300?sig="+Math.random()}));
-			  	$("#content5").prepend($('<img>',{id:'content5',src: "https://source.unsplash.com/random/300x300?sig="+Math.random()}));
+			  	$("#content").prepend($('<img>',{src: "https://source.unsplash.com/random/300x300?sig="+Math.random()}));
+			  	$("#content").prepend($('<img>',{src: "https://source.unsplash.com/random/300x300?sig="+Math.random()}));
+			  	$("#content").prepend($('<img>',{src: "https://source.unsplash.com/random/300x300?sig="+Math.random()}));
+			  	$("#content").prepend($('<img>',{src: "https://source.unsplash.com/random/300x300?sig="+Math.random()}));
+			  	$("#content").prepend($('<img>',{src: "https://source.unsplash.com/random/300x300?sig="+Math.random()}));
 			}
 
 			var intervalId = window.setInterval(function(){
