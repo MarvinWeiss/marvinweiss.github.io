@@ -6,10 +6,10 @@
 			var intervalId = window.setInterval(function(){
 				getImg();
 
-            }, 5000);
+            }, 1000);
 			function getImg(){
 				$("#content img").remove();
-			  	$("#content").prepend($('<img>',{id:'theImg',src: "https://source.unsplash.com/500x500/?construction,mechanics,electronics"}));
+			  	$("#content").prepend($('<img>',{id:'theImg',src: "https://source.unsplash.com/random/300x200?sig=${Math.random()}"}));
 			}
 		</script>
 		
