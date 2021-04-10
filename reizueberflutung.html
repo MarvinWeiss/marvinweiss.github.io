@@ -5,24 +5,39 @@
 		<script>
 			function getGif(){
 				$.get( "http://api.giphy.com/v1/gifs/random?api_key=dMXxGPxHGrJY4cJfiL2grL7uz43nHgNV", function( data ) {
-					$("#gif").remove();
-			  		$("#content").prepend($('<img>',{id:'gif',src: data.data.image_original_url}));
+			  		$("#content").prepend($('<img>',{,src: data.data.image_original_url}));
 				});
 			}
 			function getImg(){
-				$("img").remove();
-			  	$("#content").prepend($('<img>',{src: "https://source.unsplash.com/random/300x300?sig="+Math.random()}));
-			  	$("#content").prepend($('<img>',{src: "https://source.unsplash.com/random/300x300?sig="+Math.random()}));
-			  	$("#content").prepend($('<img>',{src: "https://source.unsplash.com/random/300x300?sig="+Math.random()}));
-			  	$("#content").prepend($('<img>',{src: "https://source.unsplash.com/random/300x300?sig="+Math.random()}));
 			  	$("#content").prepend($('<img>',{src: "https://source.unsplash.com/random/300x300?sig="+Math.random()}));
 			}
 
-			var intervalId = window.setInterval(function(){
-				getImg();
-				getGif();
+			function getRandomTime(){
+				return getRandomNumber(6000);
+			}
+			function getRandomNumber(max){
+				return Math.floor(Math.random() * max);
+			}
 
-            }, 2000);
+			function setRandomIntervalForRandomType(id) {
+				
+				window.setInterval(function(){
+					if(getRandomNumber(2)==1){
+						getImg();
+					}else {
+						getGif();
+					}
+				}, getRandomTime());
+				
+			}
+
+			var intervalId = window.setInterval(function(){
+				$("img").remove();
+				for(i = 0 ; i < getRandomNumber(20); i++) {
+					setRandomIntervalForRandomType();
+				}
+
+            }, getRandomTime());
 		</script>
 		
 		<style>
