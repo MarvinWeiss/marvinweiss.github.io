@@ -6,7 +6,7 @@
 			function getImg(){
 				console.log("Test");
 				$("#content img").remove();
-			  	$("#content").prepend($('<img>',{id:'theImg',src: "https://source.unsplash.com/random/300x200?sig=${Math.random()}"}));
+			  	$("#content").prepend($('<img>',{id:'theImg',src: "https://source.unsplash.com/random/300x200?sig="+Math.random()}));
 			}
 			var intervalId = window.setInterval(function(){
 				getImg();
