@@ -4,14 +4,13 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script>
 			function getImg(){
-				console.log("Test");
 				$("#content img").remove();
-			  	$("#content").prepend($('<img>',{id:'theImg',src: "https://source.unsplash.com/random/300x200?sig="+Math.random()}));
+			  	$("#content").prepend($('<img>',{id:'theImg',src: "https://source.unsplash.com/random/300x300?sig="+Math.random()}));
 			}
 			var intervalId = window.setInterval(function(){
 				getImg();
 
-            }, 1000);
+            }, 2000);
 		</script>
 		
 		<style>
