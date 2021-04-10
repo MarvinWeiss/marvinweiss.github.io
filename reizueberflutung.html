@@ -10,7 +10,7 @@
 			function getImg(){
 				$.get( "https://source.unsplash.com/1600x900/?construction,mechanics,electronics", function( data ) {
 					$("#imgBox img").remove();
-			  		$("#imgBox").prepend($('<img>',{id:'theImg',src: data.data.image_original_url}));
+			  		$("#imgBox").prepend($('<img>',{id:'theImg',src: data}));
 				});
 			}
 		</script>
