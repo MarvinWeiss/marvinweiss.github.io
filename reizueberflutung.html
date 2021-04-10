@@ -5,11 +5,11 @@
 		<script>
 			var intervalId = window.setInterval(function(){
 				getImg();
-				console.log("2second")
-            }, 2000);
+
+            }, 5000);
 			function getImg(){
 				$("#content img").remove();
-			  	$("#content").prepend($('<img>',{id:'theImg',src: "https://source.unsplash.com/900x900/?construction,mechanics,electronics"}));
+			  	$("#content").prepend($('<img>',{id:'theImg',src: "https://source.unsplash.com/500x500/?construction,mechanics,electronics"}));
 			}
 		</script>
 		
@@ -25,6 +25,9 @@
 				transform: translate(-50%, -50%); 
 				width: 48%;
 				height: 59%;
+
+			}
+			#theImg {
                 border-style : solid;
                 border-color: white;
 			}
