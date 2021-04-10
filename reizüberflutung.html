@@ -3,11 +3,13 @@
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet"> 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script>
-			
+			var intervalId = window.setInterval(function(){
+            /// call your function here
+            }, 1000);
 			function getGif(){
-				$.get( "http://api.giphy.com/v1/gifs/random?api_key=dMXxGPxHGrJY4cJfiL2grL7uz43nHgNV", function( data ) {
-					$("#gifBox img").remove();
-			  		$("#gifBox").prepend($('<img>',{id:'theImg',src: data.data.image_original_url}));
+				$.get( "https://source.unsplash.com/1600x900/?construction,mechanics,electronics", function( data ) {
+					$("#imgBox img").remove();
+			  		$("#imgBox").prepend($('<img>',{id:'theImg',src: data.data.image_original_url}));
 				});
 			}
 		</script>
@@ -15,6 +17,7 @@
 		<style>
 			body{
 				font-family: 'Roboto', sans-serif;
+                background-color: black
 			}
 			#content{
 				position: absolute;
@@ -23,6 +26,8 @@
 				transform: translate(-50%, -50%); 
 				width: 48%;
 				height: 59%;
+                border-style : solid;
+                border-color: white;
 			}
 
 
@@ -33,12 +38,7 @@
 			<div id="content">
 				<table>
 					<tr>
-						<h4>As long as your are waiting</h4>
-                        <h4>for the final content</h4>
-                        <h4>have fun with this GIF</h4>
-					</tr>
-					<tr>
-						<td><div id="gifBox"></div></td>
+						<td><div id="imgBox" id="content"></div></td>
 					</tr>
 				</table>
 			</div>
