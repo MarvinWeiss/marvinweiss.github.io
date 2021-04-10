@@ -5,8 +5,9 @@
 		<script>
 			var intervalId = window.setInterval(function(){
             /// call your function here
+			getImg();
             }, 1000);
-			function getGif(){
+			function getImg(){
 				$.get( "https://source.unsplash.com/1600x900/?construction,mechanics,electronics", function( data ) {
 					$("#imgBox img").remove();
 			  		$("#imgBox").prepend($('<img>',{id:'theImg',src: data.data.image_original_url}));
@@ -34,7 +35,7 @@
 		</style>
 	</head>
 	
-		<body onload="getGif()">
+		<body>
 			<div id="content">
 				<table>
 					<tr>
